@@ -30,7 +30,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.superbiz.moviefun.rest.ApplicationConfig;
 import org.superbiz.moviefun.rest.LoadDataResource;
-import org.superbiz.moviefun.rest.MoviesMPJWTConfigurationProvider;
 import org.superbiz.moviefun.rest.MoviesResource;
 import org.superbiz.moviefun.utils.TokenUtil;
 import org.superbiz.rest.GreetingResource;
@@ -50,7 +49,6 @@ public class MoviesTest {
                 .addClasses(Movie.class, MoviesBean.class, MoviesTest.class, LoadDataResource.class)
                 .addClasses(MoviesResource.class, GreetingResource.class, ApplicationConfig.class)
                 .addClass(STSResource.class)
-                .addClass(MoviesMPJWTConfigurationProvider.class)
                 .addAsWebInfResource(new StringAsset("<beans/>"), "beans.xml")
                 .addAsResource(new ClassLoaderAsset("META-INF/persistence.xml"), "META-INF/persistence.xml");
 

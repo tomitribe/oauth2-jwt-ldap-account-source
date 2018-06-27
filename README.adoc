@@ -1,4 +1,4 @@
-# Tribestream API Gateway - Custom Claims
+# OAuth2 with JWT and LDAP Account Source
 
 This web application aims at showing how to use the Tribestream API Gateway to authenticate users.
 In this example we'll be showing how to add custom business data inside the JWT.
@@ -17,9 +17,8 @@ You will need to checkout the source locally and then build the project.
 Here are the steps
 
 ```
-git clone TODO
-cd gateway-custom-claims
-mvn clean install -DskipTests
+git clone https://github.com/tomitribe/oauth2-jwt-ldap-account-source.git
+cd oauth2-jwt-custom-claims
 ```
 
 ## Creating an LDAP
@@ -58,7 +57,6 @@ But as a faster solution, run the following commands
 
 ```
 cd src/main/scripts
-chmod +x *.sh
 ./load-configuration.sh
 ```
 
@@ -85,30 +83,4 @@ There are 4 accounts created with the import scripts (See step 2).
 As soon as you get in the application using one of these accounts, checkout the HTTP requests from the application to the remote server.
 If you are using the Chrome browser, you can open up the developer tools.
 
-You should be able to see an authorization header with the JWT obtained from the API Gateway.
-Once you have it, go to http://jwt.io to decode the JWT and see the content.
-There should be a claim named `aud` and containing `[\"microprofile\",\"jwt\",\"tomee\"]`.
-
-This is a custom claim configured in the API Gateway and using an endpoint from the application.
-The source code of the endpoint is available under `src/main/java/org/superbiz/moviefun/sts/MovieClaimsSourceResource`.
-
-If now you want to return actual business data, change the code to return something else and restart the tomee server (see command above).
-When done, logout and login again in the application and decode the new JWT.
-You should see the updated `aud` claim.
-
-## Testing your claim source from the UI
-
-Go to the following page http://localhost:8080/tag/claim-source/movies-claims-source
-You will see the configuration for the claim source.
-It is using an API Connection.
-Click the link if you want to see the definition of the API Connection.
-
-When you are on the API Claim Source definition, click the 3 dots at the top right of the page.
-There is a link `Test`
-
-The dialog opens and allows you to simulate an OAuth2 grant.
-Select `password` for the grant type input and enter a valid username (see above for the list).
-Finally, click `TEST`.
-
-Bellow, you should all the details and the returned data for the specified user.
-This is particularly useful if you want to change the resource endpoint and see the result.
+TODO

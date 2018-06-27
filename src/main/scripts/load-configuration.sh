@@ -11,9 +11,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     HOST="host.docker.internal"
 fi
 
-# set the default key size for public/private keys to 2048
-import http://localhost:8080/tag ../resources/default-keysize-2048.json
-
 # create the Movies oauth2 profile
 import http://localhost:8080/tag ../resources/profile-oauth2-movies.json
 
@@ -29,8 +26,7 @@ import http://localhost:8080/tag ../resources/account-nick.json
 # create an API connection
 DOCKER_HOST=${HOST} import http://localhost:8080/tag ../resources/api-movies.json
 
-# create an API claim source using the previously created API connection
-DOCKER_HOST=${HOST} import http://localhost:8080/tag ../resources/api-claims-movies.json
+# Create the LDAP Connection
+DOCKER_HOST=${HOST} import http://localhost:8080/tag ../resources/ldap-movies.json
 
-# create the route
-DOCKER_HOST=${HOST} import http://localhost:8080/tag ../resources/route-movies.json
+# Create the LDAP Account Source

@@ -18,7 +18,6 @@ package org.superbiz.moviefun;
 
 import com.nimbusds.jwt.JWTClaimsSet;
 import org.apache.commons.lang.StringUtils;
-import org.superbiz.moviefun.rest.MoviesMPJWTConfigurationProvider;
 import org.superbiz.moviefun.utils.TokenUtil;
 
 import javax.ws.rs.Consumes;
@@ -105,7 +104,7 @@ public class STSResource {
                     .claim("email", username + "@superbiz.org")
                     .subject(username)
                     .audience("mp-jwt-moviefun")
-                    .issuer(MoviesMPJWTConfigurationProvider.ISSUED_BY)
+                    .issuer("/oauth2/token")
                     .build();
 
             final String accessToken;
