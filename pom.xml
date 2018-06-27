@@ -21,17 +21,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.superbiz</groupId>
-  <artifactId>gateway-ldap-account-source</artifactId>
+  <artifactId>oauth2-jwt-ldap-account-source</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Tribestream API Gateway :: LDAP Account Source</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <tomee.version>8.0.0-SNAPSHOT</tomee.version>
+    <tomee.version>7.0.4</tomee.version>
     <version.shrinkwrap.resolver>2.0.0</version.shrinkwrap.resolver>
     <mp-jwt.version>1.0</mp-jwt.version>
-    <mp-config.version>1.2</mp-config.version>
   </properties>
 
   <build>
@@ -66,7 +65,7 @@
         <artifactId>tomee-maven-plugin</artifactId>
         <version>${tomee.version}</version>
         <configuration>
-          <tomeeClassifier>microprofile</tomeeClassifier>
+          <tomeeClassifier>plus</tomeeClassifier>
           <tomeeHttpPort>8181</tomeeHttpPort>
           <args>-Xmx512m -XX:PermSize=256m</args>
           <config>${project.basedir}/src/main/tomee/</config>
@@ -118,16 +117,10 @@
     <dependency>
       <groupId>org.apache.tomee</groupId>
       <artifactId>javaee-api</artifactId>
-      <version>8.0-SNAPSHOT</version>
+      <version>7.0-1</version>
       <scope>provided</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.eclipse.microprofile.config</groupId>
-      <artifactId>microprofile-config-api</artifactId>
-      <version>${mp-config.version}</version>
-      <scope>provided</scope>
-    </dependency>
     <dependency>
       <groupId>org.eclipse.microprofile.jwt</groupId>
       <artifactId>microprofile-jwt-auth-api</artifactId>
@@ -269,7 +262,7 @@
       <artifactId>apache-tomee</artifactId>
       <version>${tomee.version}</version>
       <scope>test</scope>
-      <classifier>microprofile</classifier>
+      <classifier>plus</classifier>
       <type>zip</type>
     </dependency>
   </dependencies>
@@ -292,12 +285,6 @@
           <artifactId>tomee-embedded</artifactId>
           <version>${tomee.version}</version>
           <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.tomee</groupId>
-          <artifactId>mp-jwt</artifactId>
-          <version>${tomee.version}</version>
-          <scope>provided</scope>
         </dependency>
       </dependencies>
     </profile>
