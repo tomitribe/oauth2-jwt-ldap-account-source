@@ -1,0 +1,88 @@
+dn: ou=users,dc=superbiz,dc=com
+changetype: add
+objectClass: organizationalUnit
+ou: users
+
+dn: uid=test,ou=users,dc=superbiz,dc=com
+changetype: add
+objectclass: inetOrgPerson
+objectclass: person
+sn: Person
+cn: test
+uid: test
+userPassword: password
+mail: test@superbiz.com
+
+dn: uid=ana,ou=users,dc=superbiz,dc=com
+changetype: add
+objectclass: inetOrgPerson
+objectclass: person
+sn: Person
+cn: ana
+uid: ana
+userPassword: password
+mail: ana@superbiz.com
+
+dn: uid=bert,ou=users,dc=superbiz,dc=com
+changetype: add
+objectclass: inetOrgPerson
+objectclass: person
+sn: Person
+cn: bert
+uid: bert
+userPassword: password
+mail: bert@superbiz.com
+
+dn: uid=Cassandra,ou=users,dc=superbiz,dc=com
+changetype: add
+objectclass: inetOrgPerson
+objectclass: person
+sn: Person
+cn: Cassandra
+uid: Cassandra
+userPassword: password
+mail: Cassandra@superbiz.com
+
+dn: uid=zoe,ou=users,dc=superbiz,dc=com
+changetype: add
+objectclass: inetOrgPerson
+objectclass: person
+sn: Person
+cn: zoe
+uid: zoe
+userPassword: password
+mail: zoe@superbiz.com
+
+dn: uid=kenny,ou=users,dc=superbiz,dc=com
+changetype: add
+objectclass: inetOrgPerson
+objectclass: person
+sn: Person
+cn: kenny
+uid: kenny
+userPassword: password
+mail: kenny@superbiz.com
+title: premium
+
+dn: uid=eric,ou=users,dc=superbiz,dc=com
+changetype: add
+objectclass: inetOrgPerson
+objectclass: person
+sn: Person
+cn: eric
+uid: eric
+userPassword: password
+mail: eric@superbiz.com
+title: premium
+
+dn: uid=bebe,ou=users,dc=superbiz,dc=com
+changetype: add
+objectclass: inetOrgPerson
+objectclass: person
+sn: Person
+cn: bebe
+uid: bebe
+userPassword: password
+mail: bebe@superbiz.com
+title: regular
+

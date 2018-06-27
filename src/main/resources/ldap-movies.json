@@ -1,0 +1,2 @@
+//api/ldap/
+{"displayName":null,"description":null,"url":"ldaps://localhost:389","username":null,"password":null,"useTls":false,"minSize":3,"maxSize":10,"validateOnBorrow":false,"validateOnReturn":false,"validateWhileIdle":false,"validationInterval":null,"validationBaseDn":null,"validationFilter":null,"tags":[],"name":"Movie LDAP Connection"}

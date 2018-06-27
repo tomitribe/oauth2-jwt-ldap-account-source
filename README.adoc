@@ -22,6 +22,17 @@ cd gateway-custom-claims
 mvn clean install -DskipTests
 ```
 
+## Creating an LDAP
+
+The first thing is to make sure we have an LDAP to authenticate against.
+The API Gateway will be configured to connect to this LDAP.
+
+```
+docker run --restart=always -p 389:389 --env LDAP_ORGANISATION="superbiz.com" --env LDAP_DOMAIN="superbiz.com" --env LDAP_ADMIN_PASSWORD="secret" \
+--volume `pwd`/src/main/ldifs:/container/service/slapd/assets/config/bootstrap/ldif/custom \
+--detach --name ldap osixia/openldap:1.1.9 --copy-service
+```
+
 ## Starting the Tribestream API Gateway
 
 In order to work, this application requires an STS (Secure Token Service) capable of generating signed JWT tokens.
