@@ -1,0 +1,9 @@
+%YAML 1.2
+---
+documentation:
+
+  - doc_root: 'README.adoc'
+    name: 'Examples'
+    display_name: OAuth 2.0 with JWT and LDAP Account Source'
+    public_path: 'en/api-gateway/oauth2-jwt-ldap-account-source'
+    single_page: 'false'
