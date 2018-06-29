@@ -83,4 +83,10 @@ There are 4 accounts created with the import scripts (See step 2).
 As soon as you get in the application using one of these accounts, checkout the HTTP requests from the application to the remote server.
 If you are using the Chrome browser, you can open up the developer tools.
 
-TODO
+## Authenticating using LDAP credentials
+
+Now that everything is up and running, you can now use one of the accounts from the system or use any account from LDAP.
+Best way to see it is to try it!
+
+Use alex/password credentials to login using system accounts defined in the Tribestream API Gateway.
+Use ana/password to use an LDAP account.
