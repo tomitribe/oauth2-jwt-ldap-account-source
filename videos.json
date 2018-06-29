@@ -1,0 +1,9 @@
+{
+  "title": "Quickstart Videos",
+  "videos": [
+    {
+      "displayName": "OAuth 2.0 with JWT and LDAP Account Source",
+      "link": "https://www.youtube.com/watch?v=EtiSevY79ew"
+    }
+  ]
+}
