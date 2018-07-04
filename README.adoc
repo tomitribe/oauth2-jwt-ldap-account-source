@@ -1,17 +1,26 @@
-# OAuth2 with JWT and LDAP Account Source
+:encoding: UTF-8
+:linkattrs:
+:sectlink:
+:sectanchors:
+:sectid:
+:imagesdir: media
 
-This web application aims at showing how to use the Tribestream API Gateway to authenticate users.
-In this example we'll be showing how to add custom business data inside the JWT.
+= OAuth2 with JWT and LDAP Account Source
 
-## Requirements
+== Introduction
 
-This project is self contained or depends on external libraries available on public repositories.
-It also uses the Tribestream API Gateway docker image.
+=== Learning objectives
 
-In your laptop, you will need a Java 8 JDK installed.
-You also need Docker and Maven installed.
+* Authenticate users with the Tribestream API Gateway
+* Use an external LDAP as identity store
 
-## Build the project
+=== Prerequisites
+
+* link:https://www.docker.com/community-edition[Docker] installed and running
+* link:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html[Oracle JDK 8] Installed and running
+* link:https://maven.apache.org/download.cgi[Apache Maven] Installed
+
+== Build the project
 
 You will need to checkout the source locally and then build the project.
 Here are the steps
@@ -21,7 +30,7 @@ git clone https://github.com/tomitribe/oauth2-jwt-ldap-account-source.git
 cd oauth2-jwt-custom-claims
 ```
 
-## Creating an LDAP
+== Creating an LDAP
 
 The first thing is to make sure we have an LDAP to authenticate against.
 The API Gateway will be configured to connect to this LDAP.
@@ -32,7 +41,7 @@ docker run --restart=always -p 389:389 --env LDAP_ORGANISATION="superbiz.com" --
 --detach --name ldap osixia/openldap:1.1.9 --copy-service
 ```
 
-## Starting the Tribestream API Gateway
+== Starting the Tribestream API Gateway
 
 In order to work, this application requires an STS (Secure Token Service) capable of generating signed JWT tokens.
 This is what the Tribestream API Gateway is about.
@@ -48,7 +57,7 @@ docker run --rm -it --name tag -e LICENSE=accept -e CASSANDRA_EMBEDDED=true -p 8
 Once the Tribestream API Gateway is up and running, you can connect to the console with the following URL
 http://localhost:8080/tag/
 
-## Populating and configuring the Tribestream API Gateway
+== Populating and configuring the Tribestream API Gateway
 
 To ease configuration, this project comes with necessary configuration and scripts to load the configuration of the API Gateway.
 You can also navigate through the UI and do it your self.
@@ -62,7 +71,7 @@ cd src/main/scripts
 
 NOTE: you need to make sure you first started the API Gateway with the previous step.
 
-## Starting the movie chat application
+== Starting the movie chat application
 
 Next step consists in starting the demo application.
 From the project root directory, run the following command.
@@ -75,15 +84,16 @@ It should start on port 8181 so it does not clash with the Gateway
 So what you need is to open a browser and navigate to http://localhost:8181/moviefun/
 
 There are 4 accounts created with the import scripts (See step 2).
-- alex/password with create, update and delete role
-- john/password with create role
-- nick/password with delete role
-- mark/password with update role
+
+* alex/password with create, update and delete role
+* john/password with create role
+* nick/password with delete role
+* mark/password with update role
 
 As soon as you get in the application using one of these accounts, checkout the HTTP requests from the application to the remote server.
 If you are using the Chrome browser, you can open up the developer tools.
 
-## Authenticating using LDAP credentials
+== Authenticating using LDAP credentials
 
 Now that everything is up and running, you can now use one of the accounts from the system or use any account from LDAP.
 Best way to see it is to try it!
