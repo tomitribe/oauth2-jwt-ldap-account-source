@@ -1,0 +1,18 @@
+//api/account/source/
+{
+  "name": "Movie Account Source",
+  "index": 1,
+  "ldapSource": {
+    "subtreeSearch": true,
+    "userFilter": "(&(objectclass=person)(cn={username}))",
+    "usernameAttribute": "cn",
+    "fullNameAttribute": "cn",
+    "baseDn": "ou=users,dc=superbiz,dc=com",
+    "emailAttribute": "mail"
+  },
+  "type": "LDAP",
+  "connectionRef": {
+    "id": "movie-ldap-connection"
+  },
+  "tags": []
+}
