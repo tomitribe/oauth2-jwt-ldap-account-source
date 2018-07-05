@@ -30,3 +30,4 @@ DOCKER_HOST=${HOST} import http://localhost:8080/tag ../resources/api-movies.jso
 DOCKER_HOST=${HOST} import http://localhost:8080/tag ../resources/ldap-movies.json
 
 # Create the LDAP Account Source
+DOCKER_HOST=${HOST} import http://localhost:8080/tag ../resources/movie-ldap-account-source.json
